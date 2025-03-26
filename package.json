@@ -1,0 +1,24 @@
+{
+  "name": "deadset-pictures-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rueckstiess/deadset.pictures.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rueckstiess/deadset.pictures/issues"
+  },
+  "homepage": "https://github.com/rueckstiess/deadset.pictures#readme",
+  "description": "",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.16",
+    "tailwindcss": "^4.0.16"
+  }
+}
