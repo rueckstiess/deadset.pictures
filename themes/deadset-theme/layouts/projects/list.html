@@ -1,0 +1,56 @@
+{{ define "main" }}
+<section class="py-16">
+  <div class="container mx-auto px-4">
+    <h1 class="text-4xl font-bold mb-8 text-center">{{ .Title }}</h1>
+
+    <div class="max-w-3xl mx-auto mb-12">
+      {{ .Content }}
+    </div>
+
+    <!-- Project status categories -->
+    {{ $statuses := slice "in-development" "in-production" "completed" }}
+    {{ $statusLabels := dict "in-development" "In Development" "in-production" "In Production" "completed" "Completed"
+    }}
+
+    <!-- Loop through project statuses -->
+    {{ range $statuses }}
+    {{ $status := . }}
+    {{ $statusLabel := index $statusLabels $status }}
+
+    <!-- Get projects with this status -->
+    {{ $projects := where $.Pages "Params.status" $status }}
+
+    {{ if $projects }}
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold mb-8">{{ $statusLabel }}</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {{ range $projects }}
+        <a href="{{ .RelPermalink }}"
+          class="block bg-black rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+
+          <div class="bg-black border-white rounded-lg overflow-hidden shadow-md">
+            {{ if .Params.featured_image }}
+            <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="w-full h-48 object-cover">
+            {{ else }}
+            <div class="w-full h-48 bg-gray-200"></div>
+            {{ end }}
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">{{ .Title }}</h3>
+              <p class="text-gray-400 mb-1">{{ if .Params.categories }}Genres: {{ delimit .Params.categories ", "}}{{
+                end
+                }}</p>
+              <p class="text-gray-500 mb-4">{{ if .Params.year }}Year: {{ .Params.year }}{{ end }}</p>
+              <p class="text-gray-600 mb-4">{{ .Description }}</p>
+            </div>
+          </div>
+        </a>
+
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

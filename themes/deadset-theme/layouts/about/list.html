@@ -1,0 +1,44 @@
+{{ define "main" }}
+<section class="py-16">
+  <div class="container mx-auto px-4">
+    <h1 class="text-4xl font-bold mb-8 text-center">{{ .Title }}</h1>
+
+    <!-- Company Introduction -->
+    <div class="max-w-3xl mx-auto mb-16 prose">
+      {{ .Content }}
+    </div>
+
+    <!-- Team Members -->
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">The Team</h2>
+
+      <!-- Team member entries will be listed here -->
+      {{ range $index, $page := .Pages }}
+      <div class="mb-16">
+        <div
+          class="flex flex-col {{ if modBool $index 2 }}md:flex-row{{ else }}md:flex-row-reverse{{ end }} gap-8 items-center">
+          <div class="w-full md:w-1/2">
+            {{ if .Params.profile_image }}
+            <img src="{{ .Params.profile_image }}" alt="{{ .Title }}" class="w-full h-auto rounded-lg shadow-md">
+            {{ else }}
+            <div class="w-full aspect-square bg-gray-200 rounded-lg flex items-center justify-center">
+              <span class="text-gray-500">Photo Placeholder</span>
+            </div>
+            {{ end }}
+          </div>
+          <div class="w-full md:w-1/2">
+            <h2>{{ .Title }}</h2>
+            {{ if .Params.position }}
+            <p class="text-lg text-gray-600 mb-4">{{ .Params.position }}</p>
+            {{ end }}
+            <div class="prose">
+              {{ .Content }}
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

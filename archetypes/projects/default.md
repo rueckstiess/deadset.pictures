@@ -7,7 +7,7 @@ featured_image: ""
 projectTypes: []
 categories: []
 tags: []
-status: "completed"  # options: in-development, production, completed
+status: "in-development"  # options: in-development, production, completed
 year: {{ now.Format "2006" }}
 director: ""
 producer: ""

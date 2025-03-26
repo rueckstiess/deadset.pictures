@@ -1,15 +1,18 @@
-<header class="bg-white shadow">
+<header class="bg-black shadow border-b border-gray-800">
   <div class="container mx-auto px-4 py-6">
     <div class="flex items-center justify-between">
-      <a href="/" class="text-2xl font-bold text-dark">Deadset Pictures</a>
+      <a href="/" class="text-2xl font-bold text-orange">Deadset Pictures</a>
       <nav class="hidden md:block">
         <ul class="flex space-x-6">
           {{ range .Site.Menus.main }}
-          <li><a href="{{ .URL }}" class="text-dark hover:text-primary transition">{{ .Name }}</a></li>
+          <li><a href="{{ .URL }}" class="text-white hover:text-orange transition">{{ .Name }}</a></li>
+          {{ end }}
+          {{ if not hugo.IsProduction }}
+          <li><a href="/styleguide/" class="text-pink hover:text-orange transition">Style Guide</a></li>
           {{ end }}
         </ul>
       </nav>
-      <button class="md:hidden" id="menu-toggle">
+      <button class="md:hidden text-white" id="menu-toggle">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -19,7 +22,7 @@
     <div class="md:hidden hidden" id="mobile-menu">
       <ul class="mt-4 space-y-2">
         {{ range .Site.Menus.main }}
-        <li><a href="{{ .URL }}" class="block py-2 text-dark hover:text-primary transition">{{ .Name }}</a></li>
+        <li><a href="{{ .URL }}" class="block py-2 text-white hover:text-orange transition">{{ .Name }}</a></li>
         {{ end }}
       </ul>
     </div>
