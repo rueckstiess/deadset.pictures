@@ -1,17 +1,13 @@
-<footer class="bg-black text-white py-8">
+<footer class="bg-gray-bg text-white py-8">
   <div class="container mx-auto px-4">
-    <div class="flex flex-col md:flex-row justify-between">
-      <div class="mb-6 md:mb-0">
-        <h3 class="text-xl font-bold mb-2 text-orange">Deadset Pictures</h3>
-        <p>Creating meaningful content since 2023</p>
+    <div class="flex flex-col md:flex-row justify-between mt-8 pt-4 border-t border-gray-700 text-sm text-gray-400">
+      <div>
+        <p>&copy; {{ now.Format "2006" }} Deadset Pictures. All rights reserved.</p>
       </div>
       <div>
-        <h4 class="text-lg font-semibold mb-2 text-pink">Contact</h4>
-        <p>Email: contact@deadset.pictures</p>
+        <p>Email: <a href="mailto:contact@deadset.pictures">contact@deadset.pictures</a></p>
       </div>
-    </div>
-    <div class="mt-8 pt-4 border-t border-gray-700 text-sm text-gray-400">
-      <p>&copy; {{ now.Format "2006" }} Deadset Pictures. All rights reserved.</p>
+
     </div>
   </div>
 </footer>

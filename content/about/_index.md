@@ -1,23 +1,12 @@
 ---
-title: "About Deadset Pictures"
+title: "About Us"
 description: "Learn more about our company and team"
 ---
 
-## Our Story
+At Deadset Pictures, we create bold, world-class screen content driven by fearless storytelling and a proudly Australian perspective. From scripted drama to documentary, limited series to feature films, factual hybrids to dark comedy — we develop stories with the power to move audiences everywhere.
 
-Deadset Pictures was founded in 2020 as a collaboration between passionate visual storytellers dedicated to creating compelling content for television and digital platforms.
+Our team brings together deep industry experience across every corner of the production landscape — from journalism and screenwriting to showrunning, casting, and creative development. With a shared track record spanning some of the country’s most recognisable television and film, we’re uniquely positioned to tell stories that are culturally grounded yet globally ambitious.
 
-We believe in the power of authentic storytelling to connect, inspire, and drive change. Our approach combines technical excellence with a deep understanding of narrative structure, resulting in productions that resonate with audiences across different platforms.
+We are committed to unearthing new voices and elevating perspectives that have long been underserved — both on screen and behind the camera. Diversity, inclusion, and authenticity aren’t just values we aspire to — they’re embedded in how we develop, cast, and crew every project.
 
-Based in [Your Location], we work with clients globally to bring their stories to life through documentaries, branded content, and narrative productions.
-
-## Our Approach
-
-At Deadset Pictures, we're committed to:
-
-- **Quality over quantity**: We focus on select projects where we can make a meaningful impact
-- **Collaboration**: We believe the best work emerges from true creative partnerships
-- **Innovation**: We continuously explore new techniques and technologies that enhance storytelling
-- **Integrity**: We approach every project with honesty, transparency, and respect
-
-Our work spans various genres and formats, but our commitment to excellence remains constant across all our productions.
+With a slate that champions fresh ideas, emotional resonance, and distinctive vision, Deadset Pictures is fast becoming a home for storytellers who dare to say something different — and for audiences who expect more from what they watch.

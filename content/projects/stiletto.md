@@ -1,6 +1,6 @@
 ---
 title: "Stiletto"
-description: "Stiletto is a fantastic  mystery drama about power, aging, womanhood, and reinvention in an industry that worships youth and discards its icons. At its centre are five women—once the shining stars of the most outrageous soap on TV—who are brought back together for a glossy reboot. But the past doesn’t stay buried. Not when one of them is found dead."
+description: "Stiletto is a genre-defying mystery drama about power, aging, womanhood, and reinvention in an industry that worships youth and discards its icons. At its centre are five women—once the shining stars of the most outrageous soap on TV—who are brought back together for a glossy reboot. But the past doesn’t stay buried. Not when one of them is found dead."
 date: 2023-01-15
 featured_image: "/images/projects/stiletto.png"
 status: "in-development"

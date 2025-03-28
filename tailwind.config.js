@@ -15,6 +15,8 @@ export default {
         'light-purple': '#8F2274',
         'black': '#000',
         'white': '#FFF',
+        'snow-white': '#EEE',
+        'gray-bg': '#111',
         'gray-100': '#f7f7f7',
         'gray-200': '#e6e6e6',
         'gray-300': '#d5d5d5',
