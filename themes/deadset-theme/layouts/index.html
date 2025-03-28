@@ -29,14 +29,6 @@
     logoContainer.addEventListener('touchstart', function () {
       colorLogo.style.opacity = '1';
     });
-
-    // Reset after touch end (optional - remove if you want the color to stay)
-    logoContainer.addEventListener('touchend', function () {
-      // Add a delay before fading back
-      setTimeout(() => {
-        colorLogo.style.opacity = '0';
-      }, 1500); // 1.5 second delay
-    });
   });
 </script>
 {{ end }}
