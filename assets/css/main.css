@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import "tailwindcss";
+@source "hugo_stats.json";
+@config "./tailwind.config.js";
+
+@theme {
+  --font-kodchasan: "Kodchasan", sans-serif;
+  --font-nunito: "Nunito", sans-serif;
+}
+
+/* You can add hover effects, transitions, etc. here */
+a {
+  transition: color 0.2s ease-in-out;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles using @layer */
+@layer base {
+  body {
+    @apply bg-gray-bg text-snow-white;
+  }
+
+  h1 {
+    @apply text-4xl font-kodchasan font-bold mb-6;
+  }
+
+  h2 {
+    @apply text-3xl font-kodchasan font-bold mb-4 mt-8;
+  }
+
+  h3 {
+    @apply text-2xl font-kodchasan font-bold mb-3 mt-6;
+  }
+
+  h4 {
+    @apply text-xl font-kodchasan font-semibold mb-4 mt-4 text-gray-600;
+  }
+
+  p {
+    @apply mb-4 font-nunito;
+  }
+
+  a {
+    @apply hover:text-gray-600 font-nunito transition-colors;
+  }
+}
+
+/* You can also define component classes for reusable UI patterns */
+/* @layer components {
+  .btn {
+    @apply px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition-colors;
+  }
+
+  .section-container {
+    @apply max-w-5xl mx-auto px-4 py-8;
+  }
+} */

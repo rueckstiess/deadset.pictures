@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section class="py-16">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold mb-8 text-center">{{ .Title }}</h1>
+
+      <div class="bg-red-700 border border-red-400 text-red-100 px-4 py-3 rounded mb-8" role="alert">
+        <p class="font-bold">Development Only</p>
+        <p>This style guide is only visible during development and won't be published in production.</p>
+      </div>
+
+      <div class="prose max-w-none">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

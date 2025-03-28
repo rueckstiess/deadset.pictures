@@ -1,0 +1,34 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 py-12 flex flex-col items-center justify-center min-h-[70vh]">
+
+  <!-- Large centered logo with hover/touch effect -->
+  <div class="flex flex-col items-center justify-center">
+    <div class="flex flex-col items-center justify-center w-full max-w-2xl">
+      <div class="relative logo-container" id="logo-container">
+        <!-- Black and white logo (hidden on mobile) -->
+        <img src="/images/dp_logo_bw.png" alt="Deadset Pictures Logo" class="top-0 left-0 hidden md:block">
+
+        <!-- Color logo (visible on mobile, hidden on desktop until hover/touch) -->
+        <img src="/images/dp_logo_color.png" alt="Deadset Pictures Logo"
+          class="md:absolute top-0 left-0 md:opacity-0 transition-opacity duration-1000 md:hover:opacity-100">
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional tagline or subtitle -->
+  <p class="text-xl text-snow-white mt-6 text-center">{{ .Params.tagline }}</p>
+</div>
+
+<!-- Add touch support script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const logoContainer = document.getElementById('logo-container');
+    const colorLogo = logoContainer.querySelector('img:last-child');
+
+    // Add touch event listener
+    logoContainer.addEventListener('touchstart', function () {
+      colorLogo.style.opacity = '1';
+    });
+  });
+</script>
+{{ end }}

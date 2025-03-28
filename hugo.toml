@@ -1,0 +1,46 @@
+baseURL = "https://deadset.pictures/"
+languageCode = "en-us"
+title = "Deadset Pictures"
+theme = "deadset-theme"
+
+# Enable the Hugo stats feature needed for Tailwind CSS
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+
+# Mount the hugo_stats.json file
+[module]
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
+
+# Navigation menu
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 5
+
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+projectType = "projectTypes"  # Custom taxonomy for project types (film, commercial, etc.)

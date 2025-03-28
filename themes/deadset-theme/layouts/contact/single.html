@@ -1,0 +1,65 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 py-8 max-w-4xl">
+  <h1 class="text-4xl font-bold mb-8 text-snow-white">{{ .Title }}</h1>
+
+
+  {{ if eq .RelPermalink "/success/" }}
+  <!-- Success message -->
+  <div class="bg-gray-bg border border-gray-800 rounded-lg p-6 shadow-lg">
+    <div class="text-snow-white mb-4">
+      <p class="text-xl mb-4">Your message has been sent successfully!</p>
+      <p>Thank you for contacting Deadset Pictures. We'll get back to you as soon as possible.</p>
+    </div>
+    <div class="mt-6">
+      <a href="/"
+        class="px-6 py-2 border border-gray-600 text-snow-white font-medium rounded hover:border-orange transition-opacity font-medium rounded inline-block">
+        Return to Home
+      </a>
+    </div>
+  </div>
+  {{ else }}
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form"
+    class="bg-gray-bg p-6 shadow-lg" action="/success">
+
+    <div class="mb-6 hidden">
+      <label for="bot-field" class="block font-nunito text-snow-white text-sm font-medium mb-2">Don't fill this out if
+        you're human</label>
+      <input type="text" id="bot-field" name="bot-field">
+    </div>
+
+    <div class="mb-6">
+      <label for="name" class="block font-nunito text-snow-white text-sm font-medium mb-2">Name</label>
+      <input type="text" id="name" name="name" required
+        class="w-full px-4 py-2 rounded bg-black border border-gray-800 text-snow-white font-nunito focus:outline-none focus:ring-2 focus:ring-orange">
+    </div>
+
+    <div class="mb-6">
+      <label for="email" class="block font-nunito text-snow-white text-sm font-medium mb-2">Email</label>
+      <input type="email" id="email" name="email" required
+        class="w-full px-4 py-2 rounded bg-black border border-gray-800 text-snow-white font-nunito focus:outline-none focus:ring-2 focus:ring-orange">
+    </div>
+
+    <div class="mb-6">
+      <label for="subject" class="block font-nunito text-snow-white text-sm font-medium mb-2">Subject</label>
+      <input type="text" id="subject" name="subject" required
+        class="w-full px-4 py-2 rounded bg-black border border-gray-800 text-snow-white font-nunito focus:outline-none focus:ring-2 focus:ring-orange">
+    </div>
+
+    <div class="mb-6">
+      <label for="message" class="block font-nunito text-snow-white text-sm font-medium mb-2">Message</label>
+      <textarea id="message" name="message" rows="5" required
+        class="w-full px-4 py-2 rounded bg-black border border-gray-800 text-snow-white font-nunito focus:outline-none focus:ring-2 focus:ring-orange"></textarea>
+    </div>
+
+    <div class="flex justify-end">
+      <button type="submit"
+        class="px-6 py-2 font-nunito border border-gray-600 text-snow-white font-medium rounded hover:border-orange">
+        Send Message
+      </button>
+    </div>
+
+    <div id="form-status" class="mt-4"></div>
+  </form>
+  {{end}}
+</div>
+{{ end }}

@@ -1,0 +1,64 @@
+{{ define "main" }}
+<article class="py-16">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
+
+      <div class="flex flex-wrap gap-4 mb-6">
+        {{ if .Params.status }}
+        <span class="bg-gray-600 px-3 py-1 rounded-full text-sm">{{ .Params.status | title }}</span>
+        {{ end }}
+        {{ range .Params.categories }}
+        <span class="bg-gray-600 px-3 py-1 rounded-full text-sm">{{ . }}</span>
+        {{ end }}
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div>
+          {{ if .Params.featured_image }}
+          <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="w-full rounded-lg shadow-md">
+          {{ else }}
+          <div class="w-full aspect-video bg-gray-200 rounded-lg"></div>
+          {{ end }}
+        </div>
+
+        <div>
+          <div class="space-y-4">
+            {{ if .Params.client }}
+            <div>
+              <h3 class="text-lg font-semibold">Client</h3>
+              <p>{{ .Params.client }}</p>
+            </div>
+            {{ end }}
+
+            {{ if .Params.year }}
+            <div>
+              <h3 class="text-lg font-semibold">Year</h3>
+              <p>{{ .Params.year }}</p>
+            </div>
+            {{ end }}
+
+            {{ if .Params.categories }}
+            <div>
+              <h3 class="text-lg font-semibold">Categories</h3>
+              <p>{{ delimit .Params.categories ", " }}</p>
+            </div>
+            {{ end }}
+
+            {{ if .Params.trailer_url }}
+            <div>
+              <h3 class="text-lg font-semibold">Trailer</h3>
+              <a href="{{ .Params.trailer_url }}" target="_blank" class="text-black hover:underline">Watch Trailer</a>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+
+      <div class="prose max-w-none">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</article>
+{{ end }}
