@@ -7,6 +7,7 @@ status: "in-development"
 client: "Example Client 2"
 year: "2023"
 categories: ["Feature Film", "Drama"]
+draft: true
 ---
 
 ## Project Overview
