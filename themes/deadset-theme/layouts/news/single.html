@@ -1,0 +1,52 @@
+{{ define "main" }}
+<section class="py-16">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto">
+      <article>
+        <!-- News Type Badge -->
+        <div class="mb-6">
+          {{ $badgeColor := "orange" }}
+          {{ if eq .Params.news_type "press_release" }}
+            {{ $badgeColor = "pink" }}
+          {{ end }}
+          <span class="px-3 py-1 border border-{{ $badgeColor }} text-white text-xs font-medium rounded-full">
+            {{ if eq .Params.news_type "press_release" }}Press Release{{ else }}General Update{{ end }}
+          </span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
+
+        <!-- Date -->
+        <div class="mb-8 text-gray-400">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">
+            {{ .Date.Format "January 2, 2006" }}
+          </time>
+        </div>
+
+        <!-- Description -->
+        {{ if .Params.description }}
+        <div class="text-xl mb-8 font-light text-gray-300 border-l-4 border-orange pl-4">
+          {{ .Params.description }}
+        </div>
+        {{ end }}
+
+        <!-- Content -->
+        <div class="prose prose-invert max-w-none">
+          {{ .Content }}
+        </div>
+
+        <!-- Back to News -->
+        <div class="mt-12 pt-6 border-t border-gray-800">
+          <a href="/news/" class="inline-flex items-center text-orange hover:text-pink">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+            </svg>
+            Back to News
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+{{ end }}

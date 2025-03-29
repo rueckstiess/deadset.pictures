@@ -1,0 +1,81 @@
+{{ define "main" }}
+<section class="py-16">
+  <div class="container mx-auto px-4">
+    <h1 class="text-4xl font-bold mb-12 text-center">{{ .Title }}</h1>
+
+    <div class="max-w-3xl mx-auto mb-12">
+      {{ .Content }}
+    </div>
+
+    <div class="max-w-3xl mx-auto mb-12">
+      {{ $paginator := .Paginate (where .Pages "Type" "news") 5 }}
+
+      {{ range $paginator.Pages }}
+      {{ $badgeColor := "orange" }}
+      {{ if eq .Params.news_type "press_release" }}
+      {{ $badgeColor = "pink" }}
+      {{ end }}
+
+      <div class="bg-gray-bg mb-8 overflow-hidden">
+        <div class="py-6">
+          <div class="flex justify-between items-center mb-4">
+            <span class="px-3 py-1 border border-{{ $badgeColor }} text-white text-xs font-medium rounded-full">
+              {{ if eq .Params.news_type "press_release" }}Press Release{{ else }}General Update{{ end }}
+            </span>
+            <time datetime="{{ .Date.Format " 2006-01-02" }}" class="text-gray-400 text-sm">
+              {{ .Date.Format "January 2, 2006" }}
+            </time>
+          </div>
+
+          <h3 class="mb-3 hover:text-pink font-normal">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h3>
+
+          <p class="text-gray-400 mb-4">{{ .Params.description }}</p>
+
+          <a href="{{ .RelPermalink }}" class="inline-block text-orange hover:text-pink font-medium">
+            Read more →
+          </a>
+        </div>
+      </div>
+      {{ end }}
+
+      <!-- Pagination -->
+      {{ if gt $paginator.TotalPages 1 }}
+      <div class="mt-12 flex justify-center">
+        <nav aria-label="Pagination" class="inline-flex">
+          {{ if $paginator.HasPrev }}
+          <a href="{{ $paginator.Prev.URL }}"
+            class="px-4 py-2 mx-1 text-snow-white hover:text-orange transition-colors">
+            Previous
+          </a>
+          {{ else }}
+          <span class="px-4 py-2 mx-1 text-gray-700 cursor-not-allowed">
+            Previous
+          </span>
+          {{ end }}
+
+          {{ range $paginator.Pagers }}
+          <a href="{{ .URL }}"
+            class="px-4 py-2 mx-1 {{ if eq . $paginator }}text-orange{{ else }}text-snow-white hover:text-orange transition-colors{{ end }}">
+            {{ .PageNumber }}
+          </a>
+          {{ end }}
+
+          {{ if $paginator.HasNext }}
+          <a href="{{ $paginator.Next.URL }}"
+            class="px-4 py-2 mx-1 text-snow-white hover:text-orange transition-colors">
+            Next
+          </a>
+          {{ else }}
+          <span class="px-4 py-2 mx-1 text-gray-700 cursor-not-allowed">
+            Next
+          </span>
+          {{ end }}
+        </nav>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
