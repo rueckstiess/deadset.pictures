@@ -9,6 +9,11 @@
 
     <div class="max-w-3xl mx-auto mb-12">
       {{ $paginator := .Paginate (where .Pages "Type" "news") 5 }}
+      {{ if eq $paginator.TotalPages 0 }}
+      <div class="text-center pt-16">
+        <p class="text-gray-500">We'll soon share some exciting news. Stay tuned...</p>
+      </div>
+      {{ end }}
 
       {{ range $paginator.Pages }}
       {{ $badgeColor := "orange" }}
