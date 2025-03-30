@@ -1,0 +1,8 @@
+{{ $numImages := len .Inner }}
+{{ $cols := .Get "cols" | default "2" }}
+{{ $class := .Get "class" | default ""}}
+{{ $gap := .Get "gap" | default "4" }}
+
+<div class="grid grid-cols-1 md:grid-cols-{{ $cols }} gap-{{ $gap }} {{ $class }}">
+  {{ .Inner }}
+</div>

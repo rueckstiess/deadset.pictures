@@ -48,3 +48,6 @@ theme = "deadset-theme"
 category = "categories"
 tag = "tags"
 projectType = "projectTypes"  # Custom taxonomy for project types (film, commercial, etc.)
+
+[security]
+  enableInlineShortcodes = true
