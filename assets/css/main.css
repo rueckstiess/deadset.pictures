@@ -32,11 +32,11 @@ a {
   }
 
   h3 {
-    @apply text-2xl font-kodchasan font-bold mb-3 mt-6;
+    @apply text-2xl font-nunito mb-3 mt-8;
   }
 
   h4 {
-    @apply text-xl font-kodchasan font-semibold mb-4 mt-4 text-gray-600;
+    @apply text-xl font-nunito font-semibold mb-2 mt-6 text-gray-600;
   }
 
   p {

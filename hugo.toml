@@ -35,6 +35,10 @@ theme = "deadset-theme"
     url = "/about/"
     weight = 2
   [[menu.main]]
+    name = "News"
+    url = "/news/"
+    weight = 3
+  [[menu.main]]
     name = "Contact"
     url = "/contact/"
     weight = 5
@@ -44,3 +48,6 @@ theme = "deadset-theme"
 category = "categories"
 tag = "tags"
 projectType = "projectTypes"  # Custom taxonomy for project types (film, commercial, etc.)
+
+[security]
+  enableInlineShortcodes = true
