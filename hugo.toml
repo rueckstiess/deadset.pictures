@@ -51,3 +51,10 @@ projectType = "projectTypes"  # Custom taxonomy for project types (film, commerc
 
 [security]
   enableInlineShortcodes = true
+
+
+[services]
+  [services.googleAnalytics]
+    id = 'G-GDRLN3J013'
+    disable = false
+    respectDoNotTrack = false
