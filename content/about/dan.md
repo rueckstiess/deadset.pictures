@@ -1,6 +1,6 @@
 ---
 title: "Dan Bennett"
-position: "Creative and Content Director"
+position: "Head of Scripted"
 profile_image: "/images/team/dan-headshot.jpg"
 weight: 1
 ---

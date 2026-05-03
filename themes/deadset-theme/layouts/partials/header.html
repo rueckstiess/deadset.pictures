@@ -1,3 +1,5 @@
+{{ $newsSection := site.GetPage "/news" }}
+{{ $hasNews := and $newsSection (gt (len $newsSection.RegularPages) 0) }}
 <header class="fixed top-0 left-0 right-0 z-50 bg-gray-bg shadow border-b border-gray-800">
   <div class="container mx-auto px-4 py-6">
     <div class="flex items-center justify-between">
@@ -10,7 +12,9 @@
       <nav class="hidden md:block">
         <ul class="flex space-x-6">
           {{ range .Site.Menus.main }}
+          {{ if or (ne .Name "News") $hasNews }}
           <li><a href="{{ .URL }}" class="text-snow-white hover:text-orange transition">{{ .Name }}</a></li>
+          {{ end }}
           {{ end }}
           {{ if not hugo.IsProduction }}
           <li><a href="/styleguide" class="text-pink hover:text-orange transition">Style Guide</a></li>
@@ -28,7 +32,9 @@
     <div class="md:hidden hidden" id="mobile-menu">
       <ul class="mt-4 space-y-2">
         {{ range .Site.Menus.main }}
+        {{ if or (ne .Name "News") $hasNews }}
         <li><a href="{{ .URL }}" class="block py-2 text-white hover:text-orange transition">{{ .Name }}</a></li>
+        {{ end }}
         {{ end }}
       </ul>
     </div>
