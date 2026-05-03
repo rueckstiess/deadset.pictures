@@ -17,8 +17,8 @@
     {{ $status := . }}
     {{ $statusLabel := index $statusLabels $status }}
 
-    <!-- Get projects with this status -->
-    {{ $projects := where $.Pages "Params.status" $status }}
+    <!-- Get projects with this status, ordered by frontmatter weight -->
+    {{ $projects := where $.Pages.ByWeight "Params.status" $status }}
 
     {{ if $projects }}
     <div class="mb-16">
@@ -31,9 +31,9 @@
 
           <div class="bg-black border-white rounded-lg overflow-hidden shadow-md">
             {{ if .Params.featured_image }}
-            <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="w-full h-48 object-cover">
+            <img src="{{ .Params.featured_image }}" alt="{{ .Title }}" class="w-full aspect-[2/3] object-cover">
             {{ else }}
-            <div class="w-full h-48 bg-gray-200"></div>
+            <div class="w-full aspect-[2/3] bg-gray-200"></div>
             {{ end }}
             <div class="p-6">
               <h3 class="text-xl font-bold mb-2">{{ .Title }}</h3>
