@@ -44,6 +44,7 @@ moment in mainstream culture in a way they never have before. This story is not 
 important.
 
 > “The chance to bring this world to screen is enormous. It is intimate, confronting, funny, sexy and deeply Australian.”
+
 Sheppard, whose earlier novel Invisible Boys was adapted for television as a hit Stan Original Series, will serve as Executive Producer on the adaptation.
 
 > “I am so stoked to be working with Deadset Pictures on this project,” Sheppard said.
