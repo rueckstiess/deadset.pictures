@@ -2,7 +2,7 @@
 title: "Style Guide"
 description: "A reference for styling elements and components"
 draft: false
-_build:
+build:
   render: true
   list: false
   publishResources: true
