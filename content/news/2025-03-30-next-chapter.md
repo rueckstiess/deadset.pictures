@@ -1,7 +1,7 @@
 ---
 title: "Announcing the next chapter of Deadset Pictures"
 date: 2025-03-30
-draft: true
+draft: false
 type: "news"
 news_type: "press_release"
 description: "Veteran television executive Dan Bennett and award-winning journalist and filmmaker Steve Pennells are proud to unveil the new evolution of their creative partnership: a revitalised and reimagined Deadset Pictures."

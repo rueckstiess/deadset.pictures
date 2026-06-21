@@ -2,6 +2,7 @@ baseURL = "https://deadset.pictures/"
 languageCode = "en-us"
 title = "Deadset Pictures"
 theme = "deadset-theme"
+buildFuture = true
 
 # Enable the Hugo stats feature needed for Tailwind CSS
 [build]

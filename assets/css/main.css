@@ -43,8 +43,16 @@ a {
     @apply mb-4 font-nunito;
   }
 
+  blockquote {
+    @apply pl-4 ml-2 my-4 font-nunito;
+  }
+
   a {
     @apply hover:text-gray-600 font-nunito transition-colors;
+  }
+
+  .prose a {
+    @apply text-orange hover:text-gray-600;
   }
 }
 
